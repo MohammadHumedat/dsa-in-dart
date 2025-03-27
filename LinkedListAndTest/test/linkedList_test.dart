@@ -121,3 +121,19 @@ void main() {
     });
   });
 }
+
+
+/* command that i used in dart:test
+cd my_app
+dart test
+
+
+$ dart test --help
+
+
+test('this is the name of test', () {
+some actions
+expect(actual, matcher)
+});
+
+*/

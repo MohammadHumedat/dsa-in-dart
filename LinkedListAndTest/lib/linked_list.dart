@@ -1,6 +1,6 @@
-import 'dart:collection';
-import 'dart:ffi';
-import 'dart:typed_data';
+
+
+
 
 class Node<T> {
   Node(this.data);
@@ -144,11 +144,10 @@ class LinkedList<T> {
     }
   }
 
-  
   void operator []=(int index, T value) {
     if (index < 0 || index >= _length) {
       throw UnimplementedError('Index out of range');
-      //throw RangeError('Index out of range'); 
+      //throw RangeError('Index out of range');
     } else {
       Node<T>? pointer = head;
       for (var i = 0; i < index; i++) {
@@ -158,7 +157,6 @@ class LinkedList<T> {
     }
   }
 
-  
   LinkedList<T> operator +(LinkedList<T> other) {
     LinkedList<T> newList = LinkedList();
     Node<T>? pointer = head;
@@ -204,7 +202,6 @@ class LinkedList<T> {
     return newList;
   }
 
-
   void forEach(void Function(T) action) {
     if (head == null) {
       return;
@@ -213,10 +210,10 @@ class LinkedList<T> {
     Node<T>? pointer = head;
     while (pointer != null) {
       action(pointer.data);
-      pointer = pointer!.next;
+      pointer = pointer.next;
     }
   }
-  
+
   LinkedList<S> map<S>(S Function(T) transform) {
     if (head == null) {
       return LinkedList<S>();
@@ -233,7 +230,6 @@ class LinkedList<T> {
     return newList;
   }
 
-  
   LinkedList<T> where(bool Function(T) test) {
     if (head == null) {
       throw UnimplementedError(' the list is empty');
@@ -269,6 +265,3 @@ class LinkedList<T> {
     return buffer.toString();
   }
 }
-
-
-
