@@ -16,7 +16,7 @@ class LinkedList<T> {
   int get length => _length;
 
   bool get isEmpty => _length == 0 ? true : false;
-  // Function to add a new node into LinkedList if either its first node or add at end of LinkedList
+  
   void add(T value) {
     final newNode = Node(value);
     if (head == null) {
@@ -40,23 +40,23 @@ class LinkedList<T> {
     final newNode = Node(value);
 
     if (index == 0) {
-      // Insert at the beginning (update head)
+      
       newNode.next = head;
       head = newNode;
     } else {
       Node<T>? pointer = head;
 
-      // Traverse to the node before the insertion point
+      
       for (int i = 0; i < index - 1; i++) {
         pointer = pointer!.next;
       }
 
-      // Insert new node at the given index
+      
       newNode.next = pointer!.next;
       pointer.next = newNode;
     }
 
-    _length++; // Update list size
+    _length++; 
   }
 
   T removeAt(int index) {
@@ -67,24 +67,24 @@ class LinkedList<T> {
     T removedData;
 
     if (index == 0) {
-      // Remove head node
+      
       removedData = head!.data;
       head = head!.next;
     } else {
       Node<T>? pointer = head;
 
-      // Traverse to node before the one to be removed
+      
       for (var i = 0; i < index - 1; i++) {
         pointer = pointer!.next;
       }
 
-      // Remove node and adjust links
+      
       removedData = pointer!.next!.data;
       pointer.next = pointer.next!.next;
     }
 
-    _length--; // Decrease size
-    return removedData; // Return removed value
+    _length--; 
+    return removedData; 
   }
 
   bool contains(T value) {
@@ -100,8 +100,7 @@ class LinkedList<T> {
     return false;
   }
 
-  /// Returns the index of the first occurrence of [value],
-  /// or -1 if not found.
+  
   int indexOf(T value) {
     Node<T>? pointer = head;
     int index = 0;
@@ -117,7 +116,7 @@ class LinkedList<T> {
   }
 
   void clear() {
-    //explicity clear each node,
+    
     if (_length == 0) {
       print('the LinkedList is already empty');
     } else {
@@ -130,12 +129,12 @@ class LinkedList<T> {
     }
   }
 
-  /// Time complixity = O(n) , []() indixing operator to access/read the value.
+  
   T operator [](int index) {
     Node<T>? pointer = head;
     if (index < 0 || index >= _length) {
       throw UnimplementedError('Index out of range');
-      //throw RangeError('Index out of range');
+      
     } else {
       for (var i = 0; i < index; i++) {
         pointer = pointer!.next;
@@ -147,7 +146,7 @@ class LinkedList<T> {
   void operator []=(int index, T value) {
     if (index < 0 || index >= _length) {
       throw UnimplementedError('Index out of range');
-      //throw RangeError('Index out of range');
+      
     } else {
       Node<T>? pointer = head;
       for (var i = 0; i < index; i++) {
