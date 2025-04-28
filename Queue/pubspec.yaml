@@ -1,0 +1,9 @@
+name: Queue
+environment:
+  sdk: '>=2.12.0 <4.0.0'
+
+dependencies:
+  # your app dependencies (if any)
+
+dev_dependencies:
+  test: any
