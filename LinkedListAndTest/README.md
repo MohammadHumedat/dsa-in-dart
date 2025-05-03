@@ -52,3 +52,15 @@ Delete 99:
 2
 3
 4
+
+
+
+
+# Circular Linked List in Dart
+
+This project demonstrates a generic circular singly linked list with insert, delete, search, and access capabilities.
+
+## How Circular References Are Handled
+
+Each node points to the next node, and the last node points back to the head node. All traversals stop when the starting node is reached again, ensuring we don’t enter an infinite loop.
+```
