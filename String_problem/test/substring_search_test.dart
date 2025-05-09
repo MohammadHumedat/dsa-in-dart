@@ -1,4 +1,5 @@
-import 'substring_search.dart';
+
+import '../substring_search.dart';
 
 void main() {
   String text = "banana";
